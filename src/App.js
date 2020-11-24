@@ -6,8 +6,8 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <NavBar></NavBar>
-      <Home></Home>
+        <NavBar></NavBar>
+        <Home></Home>
       </>
     );
   }

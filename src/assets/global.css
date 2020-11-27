@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;800;900&display=swap');
+
+html{
+  background: black;
+}
+
+.menu-enter {
+  opacity: 0;
+}
+
+.menu-enter-active {
+  opacity: 1;
+  transition: opacity ease-in-out 400ms;
+}
+
+.menu-exit {
+  opacity: 1;
+}
+
+.menu-exit-active {
+  opacity: 0;
+  transition: opacity ease-in-out 400ms;
+}

@@ -15,7 +15,13 @@ module.exports = {
         '8': '8px',
         '12': '12px',
         '16': '16px',
-}
+      },
+      height: {
+        "screen/2": "50vh",
+        "screen/85": "85vh",
+        "screen/90": "90vh",
+        "screen/95": "95vh",
+      }
     },
   },
   variants: {

@@ -2,6 +2,16 @@
 
 html{
   background: black;
+  height: 100%;
+}
+
+body {
+  height:100%;
+}
+
+.vh-100 {
+  height: 100vh;  
+  height: -webkit-fill-available;
 }
 
 .menu-enter {
@@ -22,16 +32,17 @@ html{
   transition: opacity ease-in-out 400ms;
 }
 
-body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-}
-html {
-  height: -webkit-fill-available;
-}
-
 .un { 
   display: inline-block; 
+}
+
+nav {
+  transition: all 0.20s ease;
+}
+
+.nav-scrolled {
+  backdrop-filter: saturate(180%) blur(20px);
+  background: rgba(30,30,30,0.8);
 }
 
 .un:after {
@@ -41,7 +52,7 @@ html {
   transform-origin: 0% 50%;
   --tw-border-opacity: 1;
   border-color: rgba(245, 158, 11, var(--tw-border-opacity)); 
-  animation: animateUnderline 0.75s ease-in;
+  animation: animateUnderline 0.25s ease-in;
 }
 
 @media (min-width: 768px) { 

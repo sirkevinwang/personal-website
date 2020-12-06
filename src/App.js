@@ -21,11 +21,12 @@ class App extends React.Component {
   }
   render() {
     let toggleMenu = () => this.setState({ isMenuOpen: !this.state.isMenuOpen });
+    let closeMenu = () => this.setState({ isMenuOpen: false });
     return (
       <Router>
-        <div className="bg-black font-sans">
+        <NavBar isHamburgerOpen={this.state.isMenuOpen} setHamburgerOpen={toggleMenu} closeMenu={closeMenu}></NavBar>
+        <div className="bg-black font-sans h-full">
           <Menu isMenuOpen={this.state.isMenuOpen} toggleMenu={toggleMenu}></Menu>
-          <NavBar isHamburgerOpen={this.state.isMenuOpen} setHamburgerOpen={toggleMenu}></NavBar>
           <Switch>
             <Route path="/about">
               <About />

@@ -10,6 +10,13 @@ import {
   Route
 } from "react-router-dom";
 import NavBar from './components/NavBar';
+import firebase from "firebase/app";
+import { firebaseConfig } from "./secret.firebase";
+require("firebase/database");
+
+firebase.initializeApp(firebaseConfig);
+
+const db = firebase.database();
 
 class App extends React.Component {
   constructor(props) {
@@ -35,7 +42,7 @@ class App extends React.Component {
               <Contact />
             </Route>
             <Route path="/mylist">
-              <MyList />
+              <MyList db={db} />
             </Route>
             <Route path="/">
               <Home></Home>

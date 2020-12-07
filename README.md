@@ -5,3 +5,4 @@
 - autoprefixer
 - postcss
 - hamburger-react (https://hamburger-react.netlify.app)
+- firebase

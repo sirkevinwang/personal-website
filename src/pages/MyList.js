@@ -1,6 +1,21 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 
-const MyList = () => {
+const MyList = (props) => {
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const ref = props.db.ref("mylist");
+    ref.on("value", snapshot => {
+      const arr = [];
+      snapshot.forEach(el => {
+        arr.push(el.val());
+      });
+      setData(arr);
+    });
+    // Clean-up function
+    return () => ref.off("value");
+  }, [props.db]);
+
   return (
     <div>
       <div className="vh-100 lg:grid lg:grid-cols-2">
@@ -12,15 +27,7 @@ const MyList = () => {
           <h2 className="text-left text-white font-bold text-4xl xl:text-5xl 2xl:text-6xl"><span className="border-b-8 md:border-b-12 lg:border-b-12 border-yellow-500">Kevin's List</span></h2>
           <div className="pt-10 text-3xl xl:text-4xl 2xl:text-5xl text-white">
             <ul>
-              <li className="font-medium py-4">App Developer</li>
-              <li className="font-medium py-4">Designer</li>
-              <li className="font-medium py-4">Photographer</li>
-              <li className="font-medium py-4">Keynote Speaker</li>
-              <li className="font-medium py-4">Product Manager</li>
-              <li className="font-medium py-4">Quater-Million-Miler</li>
-              <li className="font-medium py-4">Lacrosse Player</li>
-              <li className="font-medium py-4">Chef</li>
-              <li className="font-medium py-4">CS:GO Gamer</li>
+              { data.map( i => <li key={i.name}>{i.name}</li>) }
             </ul>
           </div>
         </div>

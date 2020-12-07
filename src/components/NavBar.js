@@ -10,7 +10,7 @@ const NavBar = (props) => {
     let listener = null
     listener = document.addEventListener("scroll", e => {
       var scrolled = document.scrollingElement.scrollTop
-      if (scrolled >= 80) {
+      if (scrolled >= 60) {
         if (scrollState !== "nav-scrolled") {
           setScrollState("nav-scrolled")
         }

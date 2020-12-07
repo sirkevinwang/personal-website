@@ -21,6 +21,10 @@ module.exports = {
         "screen/85": "85vh",
         "screen/90": "90vh",
         "screen/95": "95vh",
+      },
+      zIndex: {
+        '-10': '-10',
+        '-100': '-100',
       }
     },
   },

@@ -25,7 +25,7 @@ const About = () => {
         </div>
       </div>
       <div className="hidden lg:block">
-        <img className="object-cover object-right h-screen sticky" alt="Kevin giving a presentation about Westtown Resort." src={AboutCover}></img>
+        <img className="object-cover object-right h-screen" alt="Kevin giving a presentation about Westtown Resort." src={AboutCover}></img>
       </div>
     </div>
   );

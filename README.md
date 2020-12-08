@@ -6,3 +6,4 @@
 - postcss
 - hamburger-react (https://hamburger-react.netlify.app)
 - firebase
+- react-reveal

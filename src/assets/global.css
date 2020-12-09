@@ -55,6 +55,15 @@ nav {
   animation: animateUnderline 0.25s ease-in;
 }
 
+
+.swiper-wrapper {
+  justify-items: center;
+}
+
+.swiper-slide {
+  height: 100vh !important;
+}
+
 @media (min-width: 768px) { 
   .un:after {
     border-bottom: solid 10px;

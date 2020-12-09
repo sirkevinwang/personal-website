@@ -5,7 +5,7 @@ const Menu = (props) => {
   const [ZIndex, setZIndex] = useState("pointer-events-none");
   const menuFade = useSpring({ opacity: props.isMenuOpen ? 1 : 0, from: { opacity: 0 }, config: { duration: 225 }, onRest: () => props.isMenuOpen ? setZIndex("") : setZIndex("pointer-events-none")})
   return (
-    <animated.div style={menuFade} className={"bg-yellow-500 h-screen w-screen text-center fixed flex z-40 " + ZIndex}>
+    <animated.div style={menuFade} className={"bg-yellow-500  h-screen/90 md:h-screen w-screen text-center fixed flex z-40 " + ZIndex}>
       <div className="m-auto font-extrabold text-3xl md:text-4xl lg:text-5xl text-white">
         <ul>
           <li className="py-8"><Link to="/" onClick={props.toggleMenu} className="cursor-pointer hover:text-black">Projects</Link></li>

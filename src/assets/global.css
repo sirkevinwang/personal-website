@@ -64,6 +64,14 @@ nav {
   height: 100vh !important;
 }
 
+.swiper-button-next {
+  color: yellow !important;
+}
+
+.swiper-button-prev {
+  color: yellow !important;
+}
+
 @media (min-width: 768px) { 
   .un:after {
     border-bottom: solid 10px;

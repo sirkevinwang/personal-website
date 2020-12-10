@@ -1,15 +1,31 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const CoverVideo = (props) => {
+  const vidRef = useRef(null);
+
+  // high performance video playback toggling
+  useEffect(() => {
+    if (props.shouldPlay) {
+      if (vidRef.current != null) {
+        vidRef.current.play();
+      }
+    } else {
+      if (vidRef.current != null) {
+        vidRef.current.pause();
+      }
+    }
+  }, [props.shouldPlay])
+
   return (
     <div className="swiper-slide w-screen h-screen relative">
       <video
+        ref={vidRef}
         style={{
           objectFit: 'cover',
           width: '100%',
           height: '100%',
         }}
-        src={props.video} autoPlay muted loop playsInline preload="auto"
+        src={props.video} muted loop playsInline preload="auto"
         className="opacity-50"
       ></video>
       <div className="h-screen w-screen z-30 absolute top-0 left-0 flex justify-center items-center">

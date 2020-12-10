@@ -38,12 +38,12 @@ const Home = () => {
       </SwiperSlide>
           <SwiperSlide>
           {({ isActive }) => (
-            <CoverVideo video={VidPolaris} name="Polaris"></CoverVideo>
+            <CoverVideo vid-id="1" video={VidPolaris} name="Polaris" shouldPlay={isActive}></CoverVideo>
           )}
         </SwiperSlide>
         <SwiperSlide>
           {({ isActive }) => (
-            <CoverVideo video={VidArgus} name="Argus"></CoverVideo>
+            <CoverVideo vid-id="2" video={VidArgus} name="Argus" shouldPlay={isActive}></CoverVideo>
           )}
         </SwiperSlide>
     </Swiper>

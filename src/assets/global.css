@@ -65,11 +65,11 @@ nav {
 }
 
 .swiper-button-next {
-  color: yellow !important;
+  color:rgba(245, 158, 11, 1) !important;
 }
 
 .swiper-button-prev {
-  color: yellow !important;
+  color: rgba(245, 158, 11, 1) !important;
 }
 
 @media (min-width: 768px) { 

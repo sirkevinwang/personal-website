@@ -21,8 +21,6 @@ const CoverImage = (props) => {
           <img className="w-full h-full object-cover" src={props.img} alt={props.alt}></img>
         }
       />
-
-
     </div>
   )
 }

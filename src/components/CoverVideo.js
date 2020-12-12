@@ -1,4 +1,7 @@
 import React, { useEffect, useRef } from 'react';
+import {
+  Link
+} from "react-router-dom";
 
 const CoverVideo = (props) => {
   const vidRef = useRef(null);
@@ -25,11 +28,15 @@ const CoverVideo = (props) => {
           width: '100%',
           height: '100%',
         }}
-        src={props.video} muted loop playsInline preload="auto"
-        className="opacity-50"
+        src={props.vid} muted loop playsInline preload="auto"
+        className="opacity-75"
       ></video>
       <div className="h-screen w-screen z-30 absolute top-0 left-0 flex justify-center items-center">
-        <div className="text-white font-medium text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-center"><span>{props.name}</span></div>
+        <Link to={props.link}>
+          <div className="text-white font-medium text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-center">
+            <span>{props.name}</span>
+          </div>
+        </Link>
       </div>
     </div>
   );

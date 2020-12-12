@@ -11,7 +11,6 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
-
 import CoverArgus from '../assets/images/covers/cover-argus.png';
 import CoverPolaris from '../assets/images/covers/cover-polaris.png';
 import CoverBoostedTouch from '../assets/images/covers/cover-boosted-touch.png';
@@ -25,17 +24,20 @@ const Home = () => {
   // projects data
   const data = {
     "1": {
-      name: "Project Argus",
-      img: CoverArgus,
-      vid: VidArgus
-    },
-    "2": {
       name: "Polaris",
+      link: "/projects/polaris",
       img: CoverPolaris,
       vid: VidPolaris
     },
+    "2": {
+      name: "Project Argus",
+      link: "/projects/project-argus",
+      img: CoverArgus,
+      vid: VidArgus
+    },
     "3": {
       name: "Boosted Touch",
+      link: "/projects/boosted-touch",
       img: CoverBoostedTouch,
       vid: VidBoostedTouch
     }
@@ -63,10 +65,10 @@ const Home = () => {
               <div><h2 className="text-center text-white font-medium text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"><span className="un">Don't</span> do the right thing.</h2></div>
             </div>
           </SwiperSlide>
-          {Object.keys(data).map((k) =>
-            <SwiperSlide>
+          {Object.keys(data).map((k, i) =>
+            <SwiperSlide key={k}>
               {({ isActive }) => (
-                <CoverVideo vid-id="1" video={data[k].vid} name={data[k].name} shouldPlay={isActive}></CoverVideo>
+                <CoverVideo vid-id={i} link={data[k].link} vid={data[k].vid} name={data[k].name} shouldPlay={isActive}></CoverVideo>
               )}
             </SwiperSlide>
           )}

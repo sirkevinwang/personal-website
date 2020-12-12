@@ -1,4 +1,7 @@
 import React from "react";
+import {
+  Link
+} from "react-router-dom";
 import { Breakpoint } from 'react-socks';
 
 import CoverImage from './CoverImage';
@@ -11,41 +14,47 @@ import VidArgus from '../assets/videos/vid-argus.mp4';
 import VidPolaris from '../assets/videos/vid-polaris.mp4';
 import VidBoostedTouch from '../assets/videos/vid-boosted-touch.mp4';
 
-
 const ProjectGrid = (props) => {
   const data = {
-    "2": {
-      name: "Project Argus",
-      img: CoverArgus,
-      vid: VidArgus
-    },
     "1": {
       name: "Polaris",
+      link: "/projects/polaris",
       img: CoverPolaris,
       vid: VidPolaris
     },
+    "2": {
+      name: "Project Argus",
+      link: "/projects/project-argus",
+      img: CoverArgus,
+      vid: VidArgus
+    },
     "3": {
       name: "Boosted Touch",
+      link: "/projects/boosted-touch",
       img: CoverBoostedTouch,
       vid: VidBoostedTouch
     }
-}
+  }
   return (
     <>
-    <Breakpoint small down>
+      <Breakpoint small down>
         <div className="grid grid-cols-1 md:grid-cols-3">
           {Object.keys(data).map((k) =>
-            <CoverImageMobile key={k} img={data[k].img} alt={data[k].name} name={data[k].name}></CoverImageMobile>
+            <Link to={data[k].link}>
+              <CoverImageMobile key={k} img={data[k].img} alt={data[k].name} name={data[k].name}></CoverImageMobile>
+            </Link>
           )}
         </div>
-    </Breakpoint>
-    <Breakpoint medium up>
+      </Breakpoint>
+      <Breakpoint medium up>
         <div className="grid grid-cols-1 md:grid-cols-3">
           {Object.keys(data).map((k) =>
-            <CoverImage key={k} vid={data[k].vid} img={data[k].img} alt={data[k].name} name={data[k].name}></CoverImage>
+          <Link to={data[k].link}>
+              <CoverImage key={k} vid={data[k].vid} img={data[k].img} alt={data[k].name} name={data[k].name}></CoverImage>
+            </Link>
           )}
         </div>
-    </Breakpoint>
+      </Breakpoint>
     </>
   );
 };

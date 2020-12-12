@@ -8,7 +8,7 @@ const Menu = (props) => {
     <animated.div style={menuFade} className={"bg-yellow-500  h-screen/90 md:h-screen w-screen text-center fixed flex z-40 " + ZIndex}>
       <div className="m-auto font-extrabold text-3xl md:text-4xl lg:text-5xl text-white">
         <ul>
-          <li className="py-8"><Link to="/" onClick={props.toggleMenu} className="cursor-pointer hover:text-black">Projects</Link></li>
+          <li className="py-8"><Link to="/projects" onClick={props.toggleMenu} className="cursor-pointer hover:text-black">Projects</Link></li>
           <li className="py-8"><Link to="/about" onClick={props.toggleMenu} className="cursor-pointer hover:text-black">About</Link></li>
           <li className="py-8"><Link to="/contact" onClick={props.toggleMenu} className="cursor-pointer hover:text-black">Contact</Link></li>
           <li className="py-8"><Link to="/mylist" onClick={props.toggleMenu} className="cursor-pointer hover:text-black">Kevin's List</Link></li>

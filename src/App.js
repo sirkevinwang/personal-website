@@ -4,6 +4,9 @@ import About from './pages/About';
 import Menu from './pages/Menu';
 import Contact from './pages/Contact';
 import MyList from './pages/MyList';
+import Projects from './pages/Projects';
+import { BreakpointProvider } from 'react-socks';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,27 +33,31 @@ class App extends React.Component {
     let toggleMenu = () => this.setState({ isMenuOpen: !this.state.isMenuOpen });
     let closeMenu = () => this.setState({ isMenuOpen: false });
     return (
-      <Router>
-        <NavBar isHamburgerOpen={this.state.isMenuOpen} setHamburgerOpen={toggleMenu} closeMenu={closeMenu}></NavBar>
-        <div className="bg-black font-sans h-full">
-          <Menu isMenuOpen={this.state.isMenuOpen} toggleMenu={toggleMenu}></Menu>
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/contact">
-              <Contact />
-            </Route>
-            <Route path="/mylist">
-              <MyList db={db} />
-            </Route>
-            <Route path="/">
-              <Home></Home>
-            </Route>
-          </Switch>
-
-        </div>
-      </Router>
+      <BreakpointProvider>
+        <Router>
+          <NavBar isHamburgerOpen={this.state.isMenuOpen} setHamburgerOpen={toggleMenu} closeMenu={closeMenu}></NavBar>
+          <div className="bg-black font-sans h-full">
+            <Menu isMenuOpen={this.state.isMenuOpen} toggleMenu={toggleMenu}></Menu>
+            <Switch>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/contact">
+                <Contact />
+              </Route>
+              <Route path="/mylist">
+                <MyList db={db} />
+              </Route>
+              <Route path="/projects">
+                <Projects></Projects>
+              </Route>
+              <Route path="/">
+                <Home></Home>
+              </Route>
+            </Switch>
+          </div>
+        </Router>
+      </BreakpointProvider>
     );
   }
 }

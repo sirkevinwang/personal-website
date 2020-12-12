@@ -7,3 +7,5 @@
 - hamburger-react (https://hamburger-react.netlify.app)
 - firebase
 - react-reveal
+- react-hover-video-player
+- react-socks

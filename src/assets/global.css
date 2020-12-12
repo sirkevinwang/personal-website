@@ -72,6 +72,14 @@ nav {
   color: rgba(245, 158, 11, 1) !important;
 }
 
+.swiper-button-next:focus {
+  outline: 0 !important;
+}
+
+.swiper-button-prev:focus {
+  outline: 0 !important;
+}
+
 @media (min-width: 768px) { 
   .un:after {
     border-bottom: solid 10px;

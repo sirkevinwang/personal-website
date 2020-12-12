@@ -29,7 +29,7 @@ const CoverVideo = (props) => {
         className="opacity-50"
       ></video>
       <div className="h-screen w-screen z-30 absolute top-0 left-0 flex justify-center items-center">
-        <div className="text-white font-medium text-8xl text-center"><span>{props.name}</span></div>
+        <div className="text-white font-medium text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-center"><span>{props.name}</span></div>
       </div>
     </div>
   );

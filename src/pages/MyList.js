@@ -7,6 +7,7 @@ const toPerc = (num) => { return Math.round(num * 100).toFixed(2) + "%" };
 const MyList = (props) => {
   const [myList, setMyList] = useState({});
   useEffect(() => {
+    // load mylist from firebase
     const ref = props.db.ref("mylist");
     ref.on("value", snapshot => {
       const arr = [];

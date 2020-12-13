@@ -1,4 +1,4 @@
-import { React } from 'react';
+import  React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Breakpoint } from 'react-socks';
 import SwiperCore, { Navigation, Pagination, Autoplay, Scrollbar, A11y } from 'swiper';

@@ -1,18 +1,13 @@
 import React from 'react';
-import Home from './pages/Home';
-import About from './pages/About';
-import Menu from './pages/Menu';
-import Contact from './pages/Contact';
-import MyList from './pages/MyList';
-import Projects from './pages/Projects';
-import { BreakpointProvider } from 'react-socks';
 
 import {
-  BrowserRouter as Router,
-  Switch,
-  Route
+  BrowserRouter as Router
 } from "react-router-dom";
+import { BreakpointProvider } from 'react-socks';
+
+import Routes from './components/Routes';
 import NavBar from './components/NavBar';
+import Menu from './pages/Menu';
 import firebase from "firebase/app";
 import { firebaseConfig } from "./secret.firebase";
 require("firebase/database");
@@ -22,6 +17,7 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 
 class App extends React.Component {
+
   constructor(props) {
     super(props);
 
@@ -32,29 +28,14 @@ class App extends React.Component {
   render() {
     let toggleMenu = () => this.setState({ isMenuOpen: !this.state.isMenuOpen });
     let closeMenu = () => this.setState({ isMenuOpen: false });
+
     return (
       <BreakpointProvider>
         <Router>
           <NavBar isHamburgerOpen={this.state.isMenuOpen} setHamburgerOpen={toggleMenu} closeMenu={closeMenu}></NavBar>
           <div className="bg-black font-sans h-full">
             <Menu isMenuOpen={this.state.isMenuOpen} toggleMenu={toggleMenu}></Menu>
-            <Switch>
-              <Route path="/about">
-                <About />
-              </Route>
-              <Route path="/contact">
-                <Contact />
-              </Route>
-              <Route path="/mylist">
-                <MyList db={db} />
-              </Route>
-              <Route path="/projects">
-                <Projects></Projects>
-              </Route>
-              <Route path="/">
-                <Home></Home>
-              </Route>
-            </Switch>
+            <Routes db={db}></Routes>
           </div>
         </Router>
       </BreakpointProvider>

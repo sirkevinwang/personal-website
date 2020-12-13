@@ -18,6 +18,8 @@ import VidArgus from '../assets/videos/vid-argus.mp4';
 import VidPolaris from '../assets/videos/vid-polaris.mp4';
 import VidBoostedTouch from '../assets/videos/vid-boosted-touch.mp4';
 
+import AngleDownIcon from '../assets/images/angledown.png';
+
 SwiperCore.use([Navigation, Pagination, Autoplay, Scrollbar, A11y]);
 
 const Home = () => {
@@ -79,6 +81,9 @@ const Home = () => {
       <Breakpoint small down>
         <div className="vh-100 w-full items-center justify-center table">
           <h2 className="table-cell align-middle text-center text-white font-medium text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl"><span className="un">Don't</span> do the right thing.</h2>
+        </div>
+        <div className="bottom-0 items-center absolute w-full px-4 md:px-8 text-center">
+          <img alt="Angled down button" className="h-16 ml-auto mr-auto" src={AngleDownIcon}></img>
         </div>
         <ProjectGrid></ProjectGrid>
       </Breakpoint>

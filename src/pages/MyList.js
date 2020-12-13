@@ -24,7 +24,7 @@ const MyList = (props) => {
 
   return (
     <div>
-      <div className="">
+      <div>
         <div className="p-4 pr-0 pb-0 md:p-8 md:pr-0 md:pb-0">
           <br></br>
           <br></br>

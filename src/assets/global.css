@@ -80,6 +80,12 @@ nav {
   outline: 0 !important;
 }
 
+.argus-gradient-text {
+  background: linear-gradient(45deg, #8BDAD1, #62B8DC);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 @media (min-width: 768px) { 
   .un:after {
     border-bottom: solid 10px;

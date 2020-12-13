@@ -39,15 +39,13 @@ const ProjectArgus = (props) => {
       <section className="w-full items-center justify-center mt-16 md:mt-32">
         <div className="grid grid-cols-2 px-8 md:px-32 py-8">
           <Fade cascade>
-            <img src={PhoneStopImage} className="h-64 md:h-128" alt="Phone telling user to stop at an intersection"></img>
-            <img src={PhoneGoImage} className="h-64 md:h-128" alt="Phone telling user to go at an intersection"></img>
-
-
+            <img src={PhoneStopImage} className="h-64 md:h-128 lg:h-192" alt="Phone telling user to stop at an intersection"></img>
+            <img src={PhoneGoImage} className="h-64 md:h-128 lg:h-192" alt="Phone telling user to go at an intersection"></img>
           </Fade>
         </div>
       </section>
 
-      <section className="w-full items-center justify-center flex mt-16 md:mt-32">
+      <section className="w-full items-center flex mt-16 md:mt-32">
         <Fade bottom cascade>
           <div className="px-8 md:px-32">
             <h2 className="text-base md:text-xl lg:text-2xl xl:text-3xl">To make this possible, we trained a single shot detector to classify pedestrian crossing signals.</h2>

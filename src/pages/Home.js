@@ -18,7 +18,7 @@ import VidArgus from '../assets/videos/vid-argus.mp4';
 import VidPolaris from '../assets/videos/vid-polaris.mp4';
 import VidBoostedTouch from '../assets/videos/vid-boosted-touch.mp4';
 
-import AngleDownIcon from '../assets/images/angledown.png';
+import AngleDownIcon from '../assets/images/angledown-w.png';
 
 SwiperCore.use([Navigation, Pagination, Autoplay, Scrollbar, A11y]);
 
